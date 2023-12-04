@@ -135,5 +135,5 @@ output "s3_object" {
 
 output "lambda_function_null_resource" {
   description = "The Null Resource of the Lambda Function"
-  value       = try(null_resource.archive.id, "")
+  value       = try(null_resource.archive[0].id, "")
 }
