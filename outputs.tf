@@ -132,3 +132,8 @@ output "s3_object" {
     version_id = local.s3_object_version
   }
 }
+
+output "lambda_function_null_resource" {
+  description = "The Null Resource of the Lambda Function"
+  value       = try(null_resource.archive.id, "")
+}
